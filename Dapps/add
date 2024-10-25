@@ -1,0 +1,34 @@
+Part 2: Setting up VS Code. 
+Prerequisites: 
+a. Check if node and npm are installed with the following commands 
+node -v & npm -v 
+b. Install truffle, ganache & lite-server using the following command 
+npm install -g truffle / npm install -g ganache  / npm install lite-server --dev 
+c. Ensure Ganache is running in the background 
+1. Open Terminal in VS Code and initialise Truffle with the following command 
+truffle init
+
+2. Create a new contract in the contracts folder. And write a smart contract for 
+adding two number.
+3. Create a new folder frontend and make index.html and app.js files inside. 
+index.html 
+4. Create 1_deploy.js in the migrations folder.
+5. Create test.js in the test folder to verify the contracts before deploying it. 
+6. In the source directory create a new file bs-config.json and set the base 
+directory as frontend. 
+7. Make sure about the following things 
+a. In the truffle-config.js uncomment your network details. And ensure the port 
+and network_id match with the RPC Server which can be found in Ganache 
+GUI 
+b. Ensure that solidity compiler version is set to 0.8.19 in the same file. 
+c. Ensure necessary dependencies are mentioned in the package.json. 
+Part 3: Running the DApp. 
+1. In a new terminal set directory to source and run truffle compile command.
+2. Go to build → contracts → Addition.json. Look for abi and Copy the 
+complete array. Paste it in the contractABI constant inside app.js.
+3. Next run truffle migrate. Make note of the Contract Address displayed in the 
+terminal.
+4. Copy the contract address and paste it in the contractAddress constant in the 
+app.js file.  
+5. Run truffle test to ensure our contract is correct. 
+6. Run npm start if everything is correct. 
